@@ -45,8 +45,8 @@ namespace Utilities
     static void Main()
     {
       DiceBag dice = new DiceBag();
-      Console.Write("Dice >");
-      diceToRoll = 
+          //TODO: ALLOW USER TO DEFINE DICE, MODIFIER ETC.
+      Console.Write(bag.Roll(DiceBag.Dice.D20));
     }
   }
 }
