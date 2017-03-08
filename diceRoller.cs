@@ -45,8 +45,20 @@ namespace Utilities
     static void Main()
     {
       DiceBag dice = new DiceBag();
-      var enumPlayerDice = Enum.Parse(typeof(DiceBag-Dice), playerDice, true);
-      Console.Write(dice.Roll(enumPlayerDice));
+      Console.Write("Dice to Roll >");
+      string playerRoll = Console.ReadLine();
+      Console.Write("Modifier? >");
+      uint modif = Convert.ToUInt32(Console.ReadLine());
+      if(modif == 0)
+      {
+        var diceRoll = (DiceBag.Dice) Enum.Parse(typeof(DiceBag.Dice), playerRoll, true);
+        Console.Write("The {0} rolled a {1}", playerRoll, dice.Roll(diceRoll));
+      }
+      else
+      {
+        var diceRoll = (DiceBag.Dice) Enum.Parse(typeof(DiceBag.Dice), playerRoll, true);
+        Console.Write("The {0} with a {1} modifier rolled {2}", playerRoll, modif.ToString(), dice.RollWithModifier(diceRoll, modif));
+      }
     }
   }
 }
