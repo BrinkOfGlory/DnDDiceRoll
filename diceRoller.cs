@@ -45,8 +45,8 @@ namespace Utilities
     static void Main()
     {
       DiceBag dice = new DiceBag();
-          //TODO: ALLOW USER TO DEFINE DICE, MODIFIER ETC.
-      Console.Write(bag.Roll(DiceBag.Dice.D20));
+      var enumPlayerDice = Enum.Parse(typeof(DiceBag-Dice), playerDice, true);
+      Console.Write(dice.Roll(enumPlayerDice));
     }
   }
 }
